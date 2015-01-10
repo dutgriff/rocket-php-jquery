@@ -13,7 +13,7 @@
     update to the latest version of your preferred browser. BrowseHappy is safe! 
     It directs you to the developers website to download the browser. This will 
     ensure that you don't download viruses with the browser. If you are not sure 
-    which browser is best for youi, check out Chrome.
+    which browser is best for you, check out Chrome.
   </p>
   <p>  
     Although this project is not complete, all code should give correct results. If 
