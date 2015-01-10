@@ -1,6 +1,6 @@
 <?php 
   define('MAXFLIGHTS' , 3);
-  define('MAXTRSTATIONS'  , 3);
+  define('MAXTRSTATIONS'  , 2);
 ?>
 <?php require('header.php') ?>
 <div class="row">
