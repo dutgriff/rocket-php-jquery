@@ -39,7 +39,10 @@
             <a href="../apogee.php">Apogee Determination</a>
           </li>
           <li>
-            <a href="../performance.php">Performance Prediction</a>
+            <a href="../performancePrediction.php">Performance Prediction</a>
+          </li>
+          <li>
+            <a href="../dragPrediction.php">Drag Prediction</a>
           </li>
         </ul>
       </div>
