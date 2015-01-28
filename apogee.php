@@ -9,7 +9,7 @@
       <legend class="text-center">Apogee Determination</legend>
       <div id="flightNumber" class="form-group">
         <label for="select" class="col-xs-6 control-label">Flight Number:</label>
-        <div class="col-xs-5 col-sm-3 col-md-2">
+        <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
           <select class="form-control" id="selectFlightNumber">
 
           <?php for($i=1; $i <= MAXFLIGHTS; $i++) { ?> 
@@ -27,7 +27,7 @@
       <div id="flight-<?php echo $i; ?>"<?php if($i>1) echo" class='collapse'"; ?>>
         <div id="numberTrackingStations" class="form-group">
           <label for="select" class="col-xs-6 control-label">Number of Tracking Stations:</label>
-          <div class="col-xs-5 col-sm-3 col-md-2">
+          <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
             <select class="form-control selectNumberTrackingStations">
             
             <?php for($j=1; $j <= MAXTRSTATIONS; $j++) { ?>

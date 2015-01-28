@@ -19,7 +19,7 @@
       </div>
       <div id="noseShape" class="form-group">
         <label for="select" class="col-xs-6 control-label">Nose Shape:</label>
-        <div class="col-xs-5 col-sm-3 col-md-2">
+        <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
           <select class="form-control" id="selectNoseShape">
 
             <?php foreach($noseShapes as $i=>$shape) { ?>
@@ -59,7 +59,7 @@
       </div>
       <div id="finishQuality" class="form-group">
         <label for="select" class="col-xs-6 control-label">Finish Quality:</label>
-        <div class="col-xs-5 col-sm-3 col-md-2">
+        <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
           <select class="form-control" id="selectFinishQuality">
 
             <?php foreach($finishQualities as $i=>$quality) { ?>
@@ -73,7 +73,7 @@
       </div>
       <div id="baseShape" class="form-group">
         <label for="select" class="col-xs-6 control-label">Base Shape:</label>
-        <div class="col-xs-5 col-sm-3 col-md-2">
+        <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
           <select class="form-control" id="selectBaseShape">
 
             <?php foreach($baseShapes as $i=>$shape) { ?>
@@ -141,7 +141,7 @@
       </div>
       <div id="finProfileShape" class="form-group">
         <label for="select" class="col-xs-6 control-label">Fin Profile Shape:</label>
-        <div class="col-xs-5 col-sm-3 col-md-2">
+        <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
           <select class="form-control" id="selectFinProfileShape">
             <option>Triangle</option>
             <option>Rectangle</option>
@@ -161,7 +161,7 @@
       </div>
       <div id="finEdgeShape" class="form-group">
         <label for="select" class="col-xs-6 control-label">Fin Edge Shape:</label>
-        <div class="col-xs-5 col-sm-3 col-md-2">
+        <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
           <select class="form-control" id="selectFinEdgeShape">
             <option>Square</option>
             <option>Rounded</option>
