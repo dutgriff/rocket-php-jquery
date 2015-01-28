@@ -172,6 +172,66 @@
       <div class="form-group">
         <button id="buttonCalculate" class="btn btn-primary center-block">Calculate</button>
       </div>
+      <div id="resultsContainer" class="col-md-offset-2 col-md-8 collapse">
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            <h3 class="panel-title text-center">Drag Predictions</h3>
+          </div>
+          <div class="panel-body text-center">
+            <label class="text-center">Drag Coefficient</label>
+            <div id="results" class="form-group">
+              <div class="row">
+                <label for"noseAndBody" class="col-xs-6 text-right">Nose and Body:</label>
+                <div class="col-xs-6 text-left">
+                  <label id="noseAndBody">
+                    <span class="data"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <label for"base" class="col-xs-6 text-right">Base:</label>
+                <div class="col-xs-6 text-left">
+                  <label id="base">
+                    <span class="data"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <label for"finSurface" class="col-xs-6 text-right">Fin Surface:</label>
+                <div class="col-xs-6 text-left">
+                  <label id="finSurface">
+                    <span class="data"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <label for"finInterference" class="col-xs-6 text-right">Fin Interference:</label>
+                <div class="col-xs-6 text-left">
+                  <label id="finInterference">
+                    <span class="data"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <label for"launchLug" class="col-xs-6 text-right">Launch Lug:</label>
+                <div class="col-xs-6 text-left">
+                  <label id="launchLug">
+                    <span class="data"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <label for"total" class="col-xs-6 text-right">Total:</label>
+                <div class="col-xs-6 text-left">
+                  <label id="total">
+                    <span class="data"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </form>
   </div>
 </div>

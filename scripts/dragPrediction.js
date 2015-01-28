@@ -99,12 +99,13 @@ $("button").click(function(e) {
 
   var totalDragCoefficient = bodyNoseDragCoefficient + baseDragCoefficient + finSurfaceDragCoefficient + finInterferenceDragCoefficient + lugDragCoefficient;
 
-  console.log(bodyNoseDragCoefficient);
-  console.log(baseDragCoefficient);
-  console.log(finSurfaceDragCoefficient);
-  console.log(finInterferenceDragCoefficient);
-  console.log(lugDragCoefficient);
-  console.log(totalDragCoefficient);
+  $("#resultsContainer #results #noseAndBody").text(bodyNoseDragCoefficient);
+  $("#resultsContainer #results #base").text(baseDragCoefficient);
+  $("#resultsContainer #results #finSurface").text(finSurfaceDragCoefficient);
+  $("#resultsContainer #results #finInterference").text(finInterferenceDragCoefficient);
+  $("#resultsContainer #results #launchLug").text(lugDragCoefficient);
+  $("#resultsContainer #results #total").text(totalDragCoefficient);
+  $("#resultsContainer").show();
 
 });
 
