@@ -40,14 +40,6 @@
           </div>
         </div>
       </div>
-      <div id="noseAreaRatio" class="form-group">
-        <label for="inputNoseAreaRatio" class="col-xs-6 control-label">Nose Area Ratio:</label>
-        <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
-          <div class="input-group">
-            <input id="inputNoseAreaRatio" type="text" class="form-control">
-          </div>
-        </div>
-      </div>
       <div id="tubeLength" class="form-group">
         <label for="inputTubeLength" class="col-xs-6 control-label">Tube Length:</label>
         <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">

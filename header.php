@@ -24,26 +24,15 @@
     <div class="container">
       <div class="navbar-header">
         <a href="../" class="navbar-brand">Rocket</a>
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main"></button>
       </div>
       <div class="navbar-collapse collapse" id="navbar-main">
         <ul class="nav navbar-nav">
-          <li>
-            <a href="../">Home</a>
-          </li>
-          <li>
-            <a href="../apogee.php">Apogee Determination</a>
-          </li>
-          <li>
-            <a href="../performancePrediction.php">Performance Prediction</a>
-          </li>
-          <li>
-            <a href="../dragPrediction.php">Drag Prediction</a>
-          </li>
+          <li><a href="../">Home</a></li>
+          <li><a href="../apogee.php">Apogee Determination</a></li>
+          <li><a href="../performancePrediction.php">Performance Prediction</a></li>
+          <li><a href="../dragPrediction.php">Drag Prediction</a></li>
+          <li><a href="../dragEstimate.php">Drag Estimate</a></li>
         </ul>
       </div>
     </div>

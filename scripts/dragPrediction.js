@@ -4,50 +4,60 @@ $("button").click(function(e) {
   var tubeDiameter = parseFloat($("#inputTubeDiameter").val()) / 2.54;
   var bodyCrossSectionArea = 3.14159 * Math.pow(tubeDiameter/2, 2);
 
-  switch ($("#selectNoseShape option:selected" ).text()) {
+  var noseLength, noseAreaRatio;
+  switch ($("#selectNoseShape option:selected").text()) {
     case "Ogive":
-      var noseLength = parseFloat($("#inputNoseLength").val()) / 2.54;
-      var noseAreaRatio = 2.64 * noseLength / tubeDiameter;
+      noseLength = parseFloat($("#inputNoseLength").val()) / 2.54;
+      noseAreaRatio = 2.67 * noseLength / tubeDiameter;
       break;
     case "Cone":
-      var noseLength = parseFloat($("#inputNoseLength").val()) / 2.54;
-      var noseAreaRatio = 2 * Math.sqrt(Math.exp(tubeDiameter/2, 2) + Math.exp(noseLength, 2)) / tubeDiameter;
+      noseLength = parseFloat($("#inputNoseLength").val()) / 2.54;
+      noseAreaRatio = 2 * Math.sqrt(Math.pow(tubeDiameter/2, 2) + Math.pow(noseLength, 2)) / tubeDiameter;
       break;
     case "Hemisphere":
-      var noseLength = tubeDiameter / 2;
-      var noseAreaRatio = 2;
+      noseLength = tubeDiameter / 2;
+      noseAreaRatio = 2;
       break;
+    default:
+      alert('Invalid nose shape.');
   }
 
   var tubeLength = parseFloat($("#inputTubeLength").val()) / 2.54;
   var bodyAreaRatio = 4 * tubeLength / tubeDiameter;
   var totalLength = noseLength + tubeLength;
   var totalAreaRatio = noseAreaRatio + bodyAreaRatio;
-  var reynoldsNumber = 50855 * totalLength; // Make sure 50855! is the same as 50855 here (! means single percision in
-                                            // DBASIC http://worldcomputerarticle.blogspot.com/2010/05/elements-of-qbasic.html)
-
+  var reynoldsNumber = 50855 * totalLength; // Make sure 50855! is the same as 50855 here (! means single precision in
+                                            // QBASIC http://worldcomputerarticle.blogspot.com/2010/05/elements-of-qbasic.html)
+  var flowFrictionFactor;
   switch ($("#selectFinishQuality option:selected").text()) {
     case "None":
     case "Good":
-      var flowFrictionFactor = Math.exp(10, -1.4 - Math.log(reynoldsNumber) / Math.log(10) * .16);
+      flowFrictionFactor = Math.pow(10, (-1.4 - Math.log(reynoldsNumber) / Math.log(10) * 0.16));
       break;
     case "Excellent":
-      var flowFrictionFactor = Math.exp(10, .1836 - Math.log(reynoldsNumber) / Math.log(10) * .51);
+      flowFrictionFactor = Math.pow(10, (0.1836 - Math.log(reynoldsNumber) / Math.log(10) * 0.51));
+      break;
+    default:
+      alert('Invalid finish quality');
       break;
   }
 
-  var bodyNoseDragCoefficient = 1.02 * flowFrictionFactor * (1 + 1.5 / ((totalLength / tubeDiameter) ^ 1.5)) * totalAreaRatio;
+  var bodyNoseDragCoefficient = 1.02 * flowFrictionFactor * (1 + 1.5 / Math.pow((totalLength / tubeDiameter), 1.5)) * totalAreaRatio;
 
+  var baseDiameter
   switch ($("#selectBaseShape option:selected").text()) {
     case "Blunt":
-      var baseDiameter = tubeDiameter;
+      baseDiameter = tubeDiameter;
       break;
     case "Boat Tail":
-      var baseDiameter = parseFloat($("#inputBaseDiameter")) / 2.54;
+      baseDiameter = parseFloat($("#inputBaseDiameter").val()) / 2.54;
+      break;
+    default:
+      alert('Invalid base shape.');
       break;
   }
 
-  var baseDragCoefficient = .029 / Math.sqrt(bodyNoseDragCoefficient) * Math.exp(baseDiameter/tubeDiameter, 3);
+  var baseDragCoefficient = .029 / Math.sqrt(bodyNoseDragCoefficient) * Math.pow(baseDiameter/tubeDiameter, 3);
 
   var launchLugLength = parseFloat($("#inputLaunchLugLength").val()) / 2.54;
   var lugDragCoefficient = (1.2 * .005 + .0045 * launchLugLength) / bodyCrossSectionArea;
@@ -56,32 +66,40 @@ $("button").click(function(e) {
   var finRadialWidth = parseFloat($("#inputFinRadialWidth").val()) / 2.54;
   var numberOfFins = parseFloat($("#inputNumberOfFins").val());
 
+  var finChord;
   switch ($("#selectFinProfileShape option:selected").text()) {
     case "Triangle":
-      var finChord = finRootLength / 2;
+      finChord = finRootLength / 2;
       break;
     case "Rectangle":
-      var finChord = finRootLength;
+      finChord = finRootLength;
       break;
     case "Tapered":
-      var finChord = (finRootLength + parseFloat($("#inputFinTipLength").val())/2.54) / 2;
+      finChord = (finRootLength + parseFloat($("#inputFinTipLength").val())/2.54) / 2;
       break;
     case "Elliptical":
-      var finChord = .785 * finRootLength;
+      finChord = .785 * finRootLength;
+      break;
+    default:
+      alert("Invalid fin profile shape.");
       break;
   }
 
   var finSurfaceArea = finChord * finRadialWidth * numberOfFins;
 
+  var finC;
   switch ($("#selectFinEdgeShape option:selected").text()) {
     case "Square":
-      var finC = finThickness / finRootLength * .875;
+      finC = finThickness / finRootLength * .875;
       break;
     case "Rounded":
-      var finC = finThickness / finRootLength * .5;
+      finC = finThickness / finRootLength * .5;
       break;
     case "Streamlined":
-      var finC = .01;
+      finC = .01;
+      break;
+    default:
+      alert("Invalid find edge shape");
       break;
   }
 
@@ -99,12 +117,12 @@ $("button").click(function(e) {
 
   var totalDragCoefficient = bodyNoseDragCoefficient + baseDragCoefficient + finSurfaceDragCoefficient + finInterferenceDragCoefficient + lugDragCoefficient;
 
-  $("#resultsContainer #results #noseAndBody").text(bodyNoseDragCoefficient);
-  $("#resultsContainer #results #base").text(baseDragCoefficient);
-  $("#resultsContainer #results #finSurface").text(finSurfaceDragCoefficient);
-  $("#resultsContainer #results #finInterference").text(finInterferenceDragCoefficient);
-  $("#resultsContainer #results #launchLug").text(lugDragCoefficient);
-  $("#resultsContainer #results #total").text(totalDragCoefficient);
+  $("#resultsContainer #results #noseAndBody").text(bodyNoseDragCoefficient.toFixed(3));
+  $("#resultsContainer #results #base").text(baseDragCoefficient.toFixed(3));
+  $("#resultsContainer #results #finSurface").text(finSurfaceDragCoefficient.toFixed(3));
+  $("#resultsContainer #results #finInterference").text(finInterferenceDragCoefficient.toFixed(3));
+  $("#resultsContainer #results #launchLug").text(lugDragCoefficient.toFixed(3));
+  $("#resultsContainer #results #total").text(totalDragCoefficient.toFixed(3));
   $("#resultsContainer").show();
 
 });
