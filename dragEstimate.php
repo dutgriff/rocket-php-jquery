@@ -24,7 +24,7 @@
         </div>
       </div>
       <div id="engineInitialMass" class="form-group">
-        <label for="inputEngineInitialMass" class="col-xs-6 control-label">Engine InitialMass:</label>
+        <label for="inputEngineInitialMass" class="col-xs-6 control-label">Engine Initial Mass:</label>
         <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
           <div class="input-group">
             <input id="inputEngineInitialMass" type="text" class="form-control">
@@ -41,7 +41,7 @@
           </div>
         </div>
       </div>
-      <div id="rocketMassNoEngine" class="form-group collapse">
+      <div id="rocketMassNoEngine" class="form-group">
         <label for="inputRocketMassNoEngine" class="col-xs-6 control-label">Rocket Mass (no engine):</label>
         <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
           <div class="input-group">
@@ -91,7 +91,7 @@
                 <label for"burnoutAltitude" class="col-xs-6 text-right">Burnout Altitude:</label>
                 <div class="col-xs-6 text-left">
                   <label id="burnoutAltitude">
-                    <span class="data"></span>
+                    <span class="data">m</span>
                   </label>
                 </div>
               </div>
@@ -99,7 +99,7 @@
                 <label for"burnoutVelocity" class="col-xs-6 text-right">Burnout Velocity:</label>
                 <div class="col-xs-6 text-left">
                   <label id="burnoutVelocity">
-                    <span class="data"></span>
+                    <span class="data">m/s</span>
                   </label>
                 </div>
               </div>
@@ -107,7 +107,7 @@
                 <label for"coastDistance" class="col-xs-6 text-right">Coast Distance:</label>
                 <div class="col-xs-6 text-left">
                   <label id="coastDistance">
-                    <span class="data"></span>
+                    <span class="data">m</span>
                   </label>
                 </div>
               </div>
@@ -115,7 +115,7 @@
                 <label for"totalAltitude" class="col-xs-6 text-right">Total Altitude:</label>
                 <div class="col-xs-6 text-left">
                   <label id="totalAltitude">
-                    <span class="data"></span>
+                    <span class="data">m</span>
                   </label>
                 </div>
               </div>
@@ -123,7 +123,6 @@
                 <label for"estimatedDragCoefficient" class="col-xs-6 text-right">Estimated Drag Coefficient:</label>
                 <div class="col-xs-6 text-left">
                   <label id="estimatedDragCoefficient">
-                    <span class="data"></span>
                   </label>
                 </div>
               </div>
@@ -136,6 +135,6 @@
 </div>
 
 <!-- The custom made javascript file for the Drag Prediction page -->
-<script language="javascript" type="text/javascript" src="scripts/dragPrediction.js"></script>
+<script language="javascript" type="text/javascript" src="scripts/dragEstimate.js"></script>
 
 <?php require('footer.php'); ?>
