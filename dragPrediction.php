@@ -7,7 +7,7 @@
 <div class="row">
   <div class="well col-xs-12 col-sm-offset-2 col-sm-8">
     <form class="form-horizontal col-xs-offset-1 col-xs-10" role="form" autocomplete="off">
-      <legend class="text-center">Drag Prediction</legend>
+      <legend class="text-center">Drag Prediction (Beta)</legend>
       <div id="tubeDiameter" class="form-group">
         <label for="inputTubeDiameter" class="col-xs-6 control-label">Tube Diameter:</label>
         <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">

@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="styles/bootstrap-theme.min.css">
   <!-- Minified Main Bootstrap Javascript -->
   <script language="javascript" type="text/javascript"  src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
   <!--[if lt IE 9]>
@@ -31,8 +33,8 @@
           <li><a href="../">Home</a></li>
           <li><a href="../apogee.php">Apogee Determination</a></li>
           <li><a href="../performancePrediction.php">Performance Prediction</a></li>
-          <li><a href="../dragPrediction.php">Drag Prediction</a></li>
-          <li><a href="../dragEstimate.php">Drag Estimate</a></li>
+          <li><a class="navStamp beta" href="../dragPrediction.php">Drag Prediction</a></li>
+          <li><a class="navStamp dev" href="../dragEstimate.php">Drag Estimate</a></li>
         </ul>
       </div>
     </div>
