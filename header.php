@@ -33,7 +33,7 @@
           <li><a href="../">Home</a></li>
           <li><a href="../apogee.php">Apogee Determination</a></li>
           <li><a href="../performancePrediction.php">Performance Prediction</a></li>
-          <li><a class="navStamp beta" href="../dragPrediction.php">Drag Prediction</a></li>
+          <li><a href="../dragPrediction.php">Drag Prediction</a></li>
           <li><a class="navStamp dev" href="../dragEstimate.php">Drag Estimate</a></li>
         </ul>
       </div>
