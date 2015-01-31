@@ -127,7 +127,6 @@
         <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
           <div class="input-group">
             <input id="inputNumberOfFins" type="text" class="form-control">
-            <div class="input-group-addon">cm</div>
           </div>
         </div>
       </div>
